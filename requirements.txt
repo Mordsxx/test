@@ -1,0 +1,3 @@
+# GUI uses Python's built-in Tkinter.
+# Optional for drag-and-drop or future enhancements:
+# tkinterdnd2
