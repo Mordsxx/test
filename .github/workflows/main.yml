@@ -26,9 +26,16 @@ jobs:
           pip install -r requirements.txt
           pip install pyinstaller
 
+      - name: Check project structure
+        run: |
+          dir
+          dir gui
+          dir core
+          dir engines
+
       - name: Build EXE
         run: |
-          pyinstaller --noconfirm --clean --windowed --onefile --name MordsStudio main.py
+          pyinstaller --noconfirm --clean --windowed --onefile --name MordsStudio --paths . --collect-submodules gui --collect-submodules core --collect-submodules engines main.py
 
       - name: Upload application
         uses: actions/upload-artifact@v4
